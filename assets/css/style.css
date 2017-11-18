@@ -15,4 +15,9 @@
 	padding: 5px;
 	bottom: 3px;
 
-} */
+} 
+
+.panel-body {
+	text-align: center;
+	text-size: 20px;
+}
