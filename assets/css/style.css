@@ -1,23 +1,10 @@
-.button {
-	text-align: center;
-	padding: 20px;
-	color: blue;
-}
-
 .dog {
 	height: 300px;
 	width: 250px;
 	margin: 10px;
 	background-color: #04139E;
 	color: white;
-	left: 0;
-	right: 0;
 	padding: 5px;
-	bottom: 3px;
+
 
 } 
-
-.panel-body {
-	text-align: center;
-	text-size: 20px;
-}
