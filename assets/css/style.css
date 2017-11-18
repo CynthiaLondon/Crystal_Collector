@@ -8,3 +8,11 @@
 
 
 } 
+
+#bark {
+	color: #A9A9A9;
+}
+
+#neededScore, #yourScore, #wins, #losses {
+	color: #B0C4DE;
+}

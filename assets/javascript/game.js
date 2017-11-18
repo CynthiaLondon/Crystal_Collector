@@ -24,80 +24,79 @@
   };
 
 // Scores (Current and Target)
-var currentScore = 0;
-var targetScore  = 0;
+var yourScore = 0;
+var neededScore  = 0;
 
 // Wins and Losses
 var winCount  = 0;
 var lossCount = 0;
 
 
-// FUNCTIONS
+// functionjunction
 // ------------------------------------------------------------------------------------
 // helper function for getting random numbers
 var getRandom = function(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
-// Starts the game and restarts the game
-var startGame = function() {
+
+var gameStart = function() {
   //reset current score
-  currentScore = 0;
+  yourScore = 0;
   //set new target score
-  targetScore = getRandom(15, 150);
+  neededScore = getRandom(15, 150);
  
   dogs.dog1.value = getRandom(1, 15);
   dogs.dog2.value = getRandom(1, 75);
   dogs.dog3.value = getRandom(1, 25);
   dogs.dog4.value = getRandom(1, 5);
  
-  $("#yourScore").html(currentScore);
-  $("#targetScore").html(targetScore);
+  $("#yourScore").html(yourScore);
+  $("#neededScore").html(neededScore);
 };
 
 var addValues = function(dogs) {
 
-  currentScore = currentScore + dogs.value;
+  yourScore = yourScore + dogs.value;
  
-  $("#yourScore").html(currentScore);
+  $("#yourScore").html(yourScore);
 
-  checkWin();
+  checkScore();
   
 
 };
 
-var checkWin = function() {
+var checkScore = function() {
   //Check if current score 
 
-  if (currentScore > targetScore) {
+  if (yourScore > neededScore) {
     
   
-    alert("Game Over!");
-    //add to loss counter
+    alert("Sorry, you lost! Game Over!");
+  
     lossCount++;
     //Change loss count
-    $("#lossCount").html(lossCount);
+    $("#losses").html(lossCount);
 
-    //Restart the game
-    startGame();
+    gameStart();
   }
-  else if (currentScore == targetScore) {
+  else if (yourScore == neededScore) {
     alert("You won!");
  
 
     
     winCount++;
    
-    $("#winCount").html(winCount);
+    $("#wins").html(winCount);
     
     //Restart the game
-    startGame();
+    gameStart();
 
   }
 };
 
 
 
-startGame();
+gameStart();
 
 $('#one').click(function() {
   addValues(dogs.dog1);
