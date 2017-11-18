@@ -23,7 +23,7 @@
 
   };
 
-// Scores (Current and Target)
+// Scores 
 var yourScore = 0;
 var neededScore  = 0;
 
@@ -34,15 +34,15 @@ var lossCount = 0;
 
 // functionjunction
 // ------------------------------------------------------------------------------------
-// helper function for getting random numbers
+// getting random numbers
 var getRandom = function(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
 var gameStart = function() {
-  //reset current score
+
   yourScore = 0;
-  //set new target score
+ 
   neededScore = getRandom(15, 150);
  
   dogs.dog1.value = getRandom(1, 15);
@@ -66,7 +66,7 @@ var addValues = function(dogs) {
 };
 
 var checkScore = function() {
-  //Check if current score 
+  //Check your score
 
   if (yourScore > neededScore) {
     
@@ -88,7 +88,7 @@ var checkScore = function() {
    
     $("#wins").html(winCount);
     
-    //Restart the game
+    //restart
     gameStart();
 
   }
