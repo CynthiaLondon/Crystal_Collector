@@ -1,11 +1,12 @@
 
 .dog {
 	height: 300px;
-	width: 250px;
+	width: 210px;
 	margin: 10px;
-	background-color: #04139E;
+	background-color: #4682B4;
 	color: white;
 	padding: 5px;
+
 
 
 } 
@@ -17,3 +18,17 @@
 #neededScore, #yourScore, #wins, #losses {
 	color: #B0C4DE;
 }
+
+
+.jumbotron {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+
+.col-lg-3 {
+	padding: -15px;
+	
+}
+
