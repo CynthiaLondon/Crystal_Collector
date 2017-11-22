@@ -1,4 +1,4 @@
-
+//variables
   var dogs = {
     dog1:
     {
@@ -38,18 +38,21 @@ var lossCount = 0;
 var getRandom = function(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
-
+//game logic
 var gameStart = function() {
 
   yourScore = 0;
  
   neededScore = getRandom(15, 150);
+
+  //sets the range of numbers per image and writes to DOM
  
   dogs.dog1.value = getRandom(1, 15);
   dogs.dog2.value = getRandom(1, 75);
   dogs.dog3.value = getRandom(1, 25);
   dogs.dog4.value = getRandom(1, 5);
- 
+
+//logic for yourScore 
   $("#yourScore").html(yourScore);
   $("#neededScore").html(neededScore);
 };
@@ -62,7 +65,7 @@ var addValues = function(dogs) {
 
   checkScore();
   
-
+//logic for checkScore
 };
 
 var checkScore = function() {
@@ -70,7 +73,7 @@ var checkScore = function() {
 
   if (yourScore > neededScore) {
     
-  
+  //alert
     alert("Sorry, you lost! Game Over!");
   
     lossCount++;
@@ -80,6 +83,8 @@ var checkScore = function() {
     gameStart();
   }
   else if (yourScore == neededScore) {
+   
+    //alert
     alert("You won!");
  
 
@@ -88,13 +93,13 @@ var checkScore = function() {
    
     $("#wins").html(winCount);
     
-    //restart
+    //restarts game
     gameStart();
 
   }
 };
 
-
+//clicking on miage adds values
 
 gameStart();
 
